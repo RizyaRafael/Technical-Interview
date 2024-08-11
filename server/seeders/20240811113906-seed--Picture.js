@@ -12,6 +12,12 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
+   const Pictures = require('../Datas/picture.json')
+   Pictures = Pictures.map(picture =>{ 
+    picture.createdAt = picture.updatedAt = new Date()
+    return picture
+   })
+   await queryInterface.bulkInsert('Pictures', Pictures)
   },
 
   async down (queryInterface, Sequelize) {
@@ -21,5 +27,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+    await queryInterface.bulkDelete('Pictures', null, {})
   }
 };
