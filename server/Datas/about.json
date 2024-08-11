@@ -1,0 +1,23 @@
+[
+    {
+        "Title": "Our Brands",
+        "Image": "/assets/About1Image.png",
+        "HeaderOne": "Sincirely Yours",
+        "HeaderTwo": "Creating warm and memorable experiences",
+        "HeaderThree": "Explore Pan Pacific"
+    },
+    {
+        "Title": "Our Brands",
+        "Image": "/assets/About2Image.png",
+        "HeaderOne": "Inspiringly Yours",
+        "HeaderTwo": "An oasis where nature and sustainability thrive",
+        "HeaderThree": "Explore PARKROYAL COLLECTION"
+    },
+    {
+        "Title": "Our Brands",
+        "Image": "/assets/About3Image.png",
+        "HeaderOne": "Simply Yours",
+        "HeaderTwo": "Feel the city's pulse from the comforts of your hotel",
+        "HeaderThree": "Explore PARKROYAL"
+    }
+]

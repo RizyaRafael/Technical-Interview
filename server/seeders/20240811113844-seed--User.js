@@ -1,15 +1,9 @@
 'use strict';
-const user= [
-  {
-    email: "chris@mail.com",
-    password: 
-  }
-]
 
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     /**
      * Add seed commands here.
      *
@@ -19,14 +13,20 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
+    let users = require("../Datas/users.json")
+    users = users.map(user => (
+      user.createdAt = user.updatedAt = new Date()
+    ))
+    await queryInterface.bulkInsert("Users", users)
   },
 
-  async down (queryInterface, Sequelize) {
+  async down(queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.
      *
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+    await queryInterface.bulkDelete('Users', null, {})
   }
 };
