@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   Picture.init({
     Image: DataTypes.STRING,
     Section: {
-      DataTypes: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       references: {
         model:"About",
         key: "id"

@@ -12,7 +12,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-   const Pictures = require('../Datas/picture.json')
+   let Pictures = require('../Datas/picture.json')
    Pictures = Pictures.map(picture =>{ 
     picture.createdAt = picture.updatedAt = new Date()
     return picture
