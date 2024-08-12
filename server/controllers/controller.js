@@ -1,6 +1,6 @@
 const { comparePass } = require('../helpers/bcrypt')
 const { signToken } = require('../helpers/jwt')
-const {User} = require('../models/index')
+const {User, About, Picture} = require('../models/index')
 class Controller{
     static async login (req, res, next) {
         try {
@@ -19,6 +19,22 @@ class Controller{
             const access_token = signToken({id: findUser.id})
             res.status(200).json({access_token})
         } catch (error) {   
+            next(error)
+        }
+    }
+    static async get_about (req, res, next) {
+        try {
+            const data = await About.findAll()
+            res.status(200).json(data)
+        } catch (error) {
+            next(error)
+        }
+    }
+    static async get_picture (req, res, next) {
+        try {
+            const data = await Picture.findAll()
+            res.status(200).json(data)
+        } catch (error) {
             next(error)
         }
     }
